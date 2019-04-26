@@ -2,6 +2,7 @@
   border-bottom: 2px solid gray;
   border-right: 2px solid gray;
   width: 30%;
+  padding-right: 5%;
 }
 
 body {
@@ -11,4 +12,8 @@ body {
 #selectDoctor {
   float: right;
   padding-right: 40%;
+}
+
+#filter {
+  padding-bottom: 10%;
 }

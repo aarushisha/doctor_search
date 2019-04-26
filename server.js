@@ -25,13 +25,30 @@ app.get('/allDoctors', function(req, res) {
 app.get('/id/:id', function(req, res) {
   var arr = req.url.split(':');
   var id = parseInt(arr[1]);
-  connection.query(`SELECT * from doctor_INFO WHERE id=${id}`, function(error, results) {
+  connection.query(`SELECT * FROM doctor_INFO WHERE id=${id}`, function(error, results) {
     if (error) {
       console.log(error);
     } else {
       res.send(results);
     }
   })
+})
+
+app.get('/spec/:spec', function(req,res) {
+  var arr = req.url.split(':');
+  var rating = parseInt(arr[1][arr[1].length - 1]);
+  var specialtyStr = arr[1].slice(0, arr[1].length - 1);
+  var specialtyArr = specialtyStr.split('%20');
+  var specialty = specialtyArr.join(' ');
+  connection.query(`SELECT * FROM doctor_info WHERE score=${rating} and specialty="${specialty}"`, function(error, results) {
+    if (error) {
+      console.log(error);
+    } else {
+      res.send(results);
+    }
+  })
+
+
 })
 
 app.listen(process.env.PORT || port, function() {
