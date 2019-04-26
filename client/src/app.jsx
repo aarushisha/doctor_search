@@ -14,7 +14,6 @@ class App extends React.Component {
     this.getDoctors = this.getDoctors.bind(this);
     this.selectDoctor = this.selectDoctor.bind(this);
     this.filterDoctor = this.filterDoctor.bind(this);
-    this.similarDoctor = this.similarDoctor.bind(this);
   }
 
   componentDidMount() {
