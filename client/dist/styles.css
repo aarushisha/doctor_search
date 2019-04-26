@@ -1,0 +1,14 @@
+.doctor {
+  border-bottom: 2px solid gray;
+  border-right: 2px solid gray;
+  width: 30%;
+}
+
+body {
+  font-family: Sailec, sans-serif;
+}
+
+#selectDoctor {
+  float: right;
+  padding-right: 40%;
+}
